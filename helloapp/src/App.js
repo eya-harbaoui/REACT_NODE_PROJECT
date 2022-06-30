@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { render } from "react-dom";
+
 
 function App() {
   const [firstname, setFirstName] = useState("");
@@ -11,6 +11,9 @@ function App() {
 
   return (
     <React.Fragment>
+      <header>
+        <h1>Registration </h1>
+      </header>
       <div className="formulaire">
         <form>
           <fieldset>
@@ -28,8 +31,7 @@ function App() {
                     required
                     onChange={(e) => {
                       setFirstName(e.target.value);
-                    }}
-                  ></input>
+                    }}></input>
                 </td>
               </tr>
               <tr>
@@ -45,8 +47,7 @@ function App() {
                     required
                     onChange={(e) => {
                       setLastName(e.target.value);
-                    }}
-                  ></input>
+                    }}></input>
                 </td>
               </tr>
               <tr>
@@ -59,8 +60,7 @@ function App() {
                     id="date"
                     name="date"
                     value={date}
-                    required
-                  ></input>
+                    required></input>
                 </td>
               </tr>
               <tr>
@@ -76,8 +76,7 @@ function App() {
                     required
                     onChange={(e) => {
                       setEmail(e.target.value);
-                    }}
-                  ></input>
+                    }}></input>
                 </td>
               </tr>
               <tr>
@@ -93,8 +92,7 @@ function App() {
                     required
                     onChange={(e) => {
                       setNumber(e.target.value);
-                    }}
-                  ></input>
+                    }}></input>
                 </td>
               </tr>
               <tr>
