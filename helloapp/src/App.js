@@ -1,14 +1,26 @@
 import React, { useState } from "react";
-
-
+import axios from 'axios';
 function App() {
-  const [firstname, setFirstName] = useState("");
-  const [lastname, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [number, setNumber] = useState("");
+  const [firstname, setFirstName] = useState( "" );
+  const [lastname, setLastName] = useState( "" );
+  const [email, setEmail] = useState( "" );
+  const [number, setNumber] = useState( "" );
   const [password, setPassword] = useState();
   const [date, setDate] = useState();
-
+  const [gender, setgender] = useState( "" );
+  const adduser = () => {
+    axios.post( "http://localhost:3001/create", {
+      firstname: firstname,
+      lastname: lastname,
+      DateofBirth: date,
+      email: email,
+      phonenumber: number,
+      Gender: gender,
+      Password: password
+    } ).then( () => {
+      console.log( "succes" );
+    } );
+  };
   return (
     <React.Fragment>
       <header>
@@ -121,9 +133,8 @@ function App() {
               </tr>
             </table>
           </fieldset>
-
-          <input type="submit" value="submit" id="submit"></input>
-          <input type="reset" value="reset" id="reset"></input>
+            <input type="submit" value="submit" id="submit"></input>
+            <input type="reset" value="reset" id="reset"></input>
         </form>
       </div>
     </React.Fragment>
